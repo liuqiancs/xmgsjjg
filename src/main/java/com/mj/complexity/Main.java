@@ -20,10 +20,10 @@ public class Main {
     public static long fib2(int n) {
         if (n <= 1) return n;
 
-        int first = 0;
-        int second = 1;
+        long first = 0;
+        long second = 1;
         for (int i = 0; i < n - 1; i++) {
-            int sum = first + second;
+            long sum = first + second;
             first = second;
             second = sum;
         }
@@ -33,8 +33,8 @@ public class Main {
     public static long fib3(int n) {
         if (n <= 1) return n;
 
-        int first = 0;
-        int second = 1;
+        long first = 0;
+        long second = 1;
         while (n-- > 1) {
             second += first;
             first = second - first;
@@ -42,10 +42,10 @@ public class Main {
         return second;
     }
 
-    public static int fib4(int n){
+    public static long fib4(int n){
         if(n <= 1) return n;
 
-        int[] fib = new int[n+1];
+        long[] fib = new long[n+1];
         fib[0] = 0;
         fib[1] = 1;
         for(int i = 2; i < fib.length; i++){
@@ -56,22 +56,31 @@ public class Main {
 
 
     public static void main(String[] args) {
-        int n = 60;
-        System.out.println(fib1(n));
-        System.out.println(fib2(n));
-        System.out.println(fib3(n));
+        final int n = 50;
 
-//		TimeTool.check("fib1", new Task() {
+//		TimeTool.check("fib1", new TimeTool.Task() {
 //			public void execute() {
 //				System.out.println(fib1(n));
 //			}
 //		});
-//
-//		TimeTool.check("fib2", new Task() {
-//			public void execute() {
-//				System.out.println(fib2(n));
-//			}
-//		});
+
+		TimeTool.check("fib2", new TimeTool.Task() {
+			public void execute() {
+				System.out.println(fib2(n));
+			}
+		});
+
+        TimeTool.check("fib3", new TimeTool.Task() {
+            public void execute() {
+                System.out.println(fib3(n));
+            }
+        });
+
+        TimeTool.check("fib4", new TimeTool.Task() {
+            public void execute() {
+                System.out.println(fib4(n));
+            }
+        });
     }
 
     public static void test1(int n) {
@@ -92,8 +101,8 @@ public class Main {
         }
 
         // 140000
-        // O(1)
-        // O(1)
+        // 时间复杂度O(1)
+        // 空间复杂度O(1)
     }
 
     public static void test2(int n) {
@@ -166,7 +175,8 @@ public class Main {
     }
 
     public static void test10(int n) {
-        // O(n)
+        // 时间复杂度O(n)
+        // 空间复杂度O(n)
         int a = 10;
         int b = 20;
         int c = a + b;
