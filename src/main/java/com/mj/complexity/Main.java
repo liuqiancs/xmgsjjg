@@ -106,7 +106,8 @@ public class Main {
     }
 
     public static void test2(int n) {
-        // O(n)
+        // 时间复杂度O(n)
+        // 空间复杂度O(1)
         // 1 + 3n
         for (int i = 0; i < n; i++) {
             System.out.println("test");
@@ -117,9 +118,8 @@ public class Main {
         // 1 + 2n + n * (1 + 3n)
         // 1 + 2n + n + 3n^2
         // 3n^2 + 3n + 1
-        // O(n^2)
+        // 时间复杂度O(n^2)
 
-        // O(n)
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.println("test");
@@ -131,7 +131,7 @@ public class Main {
         // 1 + 2n + n * (1 + 45)
         // 1 + 2n + 46n
         // 48n + 1
-        // O(n)
+        // 时间复杂度O(n)
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < 15; j++) {
                 System.out.println("test");
@@ -147,7 +147,7 @@ public class Main {
         // 4 = log2(16)
 
         // 执行次数 = log2(n)
-        // O(logn)
+        // 时间复杂度O(logn)
         while ((n = n / 2) > 0) {
             System.out.println("test");
         }
@@ -155,7 +155,7 @@ public class Main {
 
     public static void test6(int n) {
         // log5(n)
-        // O(logn)
+        // 时间复杂度O(logn)
         while ((n = n / 5) > 0) {
             System.out.println("test");
         }
@@ -165,7 +165,7 @@ public class Main {
         // 1 + 2*log2(n) + log2(n) * (1 + 3n)
 
         // 1 + 3*log2(n) + 2 * nlog2(n)
-        // O(nlogn)
+        // 时间复杂度O(nlogn)
         for (int i = 1; i < n; i = i * 2) {
             // 1 + 3n
             for (int j = 0; j < n; j++) {
